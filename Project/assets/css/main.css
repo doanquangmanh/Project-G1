@@ -1,7 +1,7 @@
 .header {
   width: 1242px;
   height: 453px;
-  margin-left: 140px;
+  margin-left: 0px;
   background: url(https://a-v2.sndcdn.com/assets/images/sc_landing_header_web_featured_artists-8081257b.jpg)
     50% / cover no-repeat;
   color: white;
@@ -83,7 +83,7 @@ a {
 .btn--with-icon {
   color: var(--text-color);
 }
-.auth-form__poicy-text {
+.auth-form__policy-tex {
   color: var(--text-color);
 }
 
@@ -91,12 +91,12 @@ a {
   text-align: center;
 }
 
-.auth-form__controlls {
+.auth-form__controls {
   margin-top: 80px;
   display: flex;
   justify-content: flex-end;
 }
-.auth-form__controlls-back {
+.auth-form__controls-back {
   margin-right: 8px;
 }
 .auth-form__socials {
@@ -159,4 +159,130 @@ a {
   font-size: 18px;
   height: 48px;
   margin-top: 30px;
+}
+
+/*SearchBar*/
+.search__title {
+  margin-top: 32px;
+  margin-left: 300px;
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+.search-bar {
+  height: 47px;
+  width: 602px;
+  margin-top: 48px;
+  display: flex;
+  margin-left: 321px;
+  border-radius: 2px;
+  background-color: rgb(242 242 242);
+}
+.search-bar-input {
+  width: 536px;
+  height: 100%;
+  border: none;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  background-color: rgb(242 242 242);
+  outline: none;
+}
+.search-btn-icon {
+  font-size: 2.5rem;
+  position: absolute;
+  color: var(--text-color);
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.search-btn {
+  background-color: rgb(242 242 242);
+  border: none;
+  width: 66px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
+.search-bar-input-wrap {
+  flex: 1;
+  height: 100%;
+}
+/*CONTAINER*/
+.container {
+  margin-top: 32px;
+}
+.pageList-item {
+  width: 181px;
+  height: 223px;
+  flex-basis: 19%;
+  margin-top: 35px;
+}
+.pageList-item__head {
+  height: 182px;
+  width: 100%;
+}
+.pageList-item__img {
+  padding-top: 100%;
+  background-size: 182px;
+  background-repeat: no-repeat;
+}
+.pageList-item__body {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-color);
+}
+.pageList-item__name {
+  color: var(--text-color);
+}
+.pageList-item__singer {
+}
+.pageList-item__option {
+  font-size: 15px;
+  color: white;
+  position: absolute;
+  top: 90%;
+  right: 1%;
+  justify-content: space-between;
+}
+.pageList-item__more {
+}
+.pageList-item__like {
+  margin-right: 5px;
+}
+.pageList-item__play {
+  font-size: 100px;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  border: none;
+}
+.pageList-item__play--icon {
+  color: var(--primary-color);
+}
+.pageList-item__body {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  width: 184px;
+}
+.pageList-item__singer {
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+.trendingTrack__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-left: 35px;
+}
+.explore-trending {
+  margin-left: 495px;
+  margin-top: 42px;
+  margin-bottom: 68px;
+}
+.explore-trending__btn {
+  font-size: 1.6rem;
+  background-color: var(--primary-color);
+  width: 253px;
+  height: 48px;
 }
