@@ -56,7 +56,7 @@ a {
   color: #fff;
 }
 
-/*==Authen modal ==*/
+/*Authen modal */
 .auth-form {
   width: 600px;
   height: 100%;
@@ -285,4 +285,7 @@ a {
   background-color: var(--primary-color);
   width: 253px;
   height: 48px;
+}
+.btn-account {
+  display: none;
 }
