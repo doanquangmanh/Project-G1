@@ -43,7 +43,7 @@ a {
 .button:hover {
   opacity: 0.8;
 }
-.header__sigInBtn {
+.header__signInBtn {
   background-color: #030303;
   color: #fff;
   border-style: solid;
@@ -51,7 +51,7 @@ a {
   border-color: #fff;
   margin-left: 10px;
 }
-.header__gigUpBtn {
+.header__signUpBtn {
   background-color: #ff5500;
   color: #fff;
 }
@@ -142,4 +142,21 @@ a {
 .auth-form__help-link {
   color: hsl(217deg 77% 55%);
   font-size: 15px;
+}
+/*Header title*/
+.header__content {
+  text-align: center;
+  margin-top: 147px;
+}
+.header__title {
+  font-size: 3.5rem;
+}
+.header__tagline {
+  font-size: 1.7rem;
+  padding-top: 5px;
+}
+.header__signUpBtn--content {
+  font-size: 18px;
+  height: 48px;
+  margin-top: 30px;
 }
