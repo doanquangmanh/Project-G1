@@ -212,18 +212,38 @@ body {
 }
 .image__lightOutline {
   background-color: #f50;
+  display: flex;
+}
+.image__lightOutline--child {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .playbackSoundBadge__titleContextContainer {
   margin-left: 14px;
 }
 .playbackSoundBadge__lightLink {
   color: var(--text-color);
+  font-size: 1.4rem;
 }
 .playbackSoundBadge__title {
   overflow: hidden;
   text-overflow: ellipsis;
   width: 223px;
+  white-space: nowrap;
+  height: 100%;
 }
 .playbackSoundBadge__titleLink {
   color: var(--text-color);
+  font-size: 1.2rem;
+}
+.btn-like {
+  margin-left: 20px;
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+.btn-follow {
+  margin-left: 12px;
+  font-size: 1.4rem;
+  margin-top: 10px;
 }
