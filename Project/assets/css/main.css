@@ -434,6 +434,7 @@ a {
   color: rgb(204 204 204);
   background-color: rgb(255 255 255);
   border: solid 1px rgb(242 242 242);
+  height: 106px;
 }
 .footer__link {
   font-size: 1.3rem;

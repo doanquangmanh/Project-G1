@@ -62,7 +62,7 @@ function renderLoginForm(){
         <div class="modal__overlay"></div>
         <div class="modal__body">           
              <!--Login form-->
-             <div class="auth-form login-form">
+             <div class="auth-form">
                 <div class="auth-form__container">
                     <div class="auth-form__form">
                         <div class="auth-form__group">
@@ -118,7 +118,7 @@ function renderSignUpForm(){
         <div class="modal__overlay"></div>
         <div class="modal__body">  
             <!--Register form-->
-              <div class="auth-form sigUp-form">
+              <div class="auth-form">
                 <div class="auth-form__container">
                     <div class="auth-form__form">
                         <div class="auth-form__group">
