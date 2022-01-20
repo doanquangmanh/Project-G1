@@ -9,7 +9,11 @@ const btnAccount = $('.btn-account')
 const signUpForm = $('.sigUp-form')
 const logInForm = $('.login-form')
 const returnBtn = $$('.auth-form__controls-back')
-console.log(returnBtn)
+const songImages = $$('.pageList-item__head')
+console.log(songImages)
+const songAction = $$('.pageList-item__action')
+console.log(songAction)
+console.log(songAction.length)
 
 
 function start(){
@@ -34,6 +38,23 @@ function HandleEvent(){
         btnAccount.style.display = "none"
         logInForm.style.display = "block"
     }
+    //xử lí khi hover qua bài hát
+    /*
+    for(var i = 0; i < songImage.length; i++){
+        songImage[i].onmouseover = function(){
+            songAction[i].style.display="block"
+        }
+    }
+    */
+   songImages.forEach(function(songImage,i){
+    songImage.onmouseover = function(){
+        songAction[i].style.display="block"
+    }
+    songImage.onmouseout=function(){
+        songAction[i].style.display="none"
+    }
+   })
 }
+
 
 

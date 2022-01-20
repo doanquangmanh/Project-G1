@@ -219,11 +219,12 @@ a {
 .pageList-item__head {
   height: 182px;
   width: 100%;
+  position: relative;
 }
 .pageList-item__img {
-  padding-top: 100%;
-  background-size: 182px;
   background-repeat: no-repeat;
+  width: 181px;
+  height: 100%;
 }
 .pageList-item__body {
   white-space: nowrap;
@@ -234,25 +235,28 @@ a {
 .pageList-item__name {
   color: var(--text-color);
 }
-.pageList-item__singer {
-}
+
 .pageList-item__option {
   font-size: 15px;
-  color: white;
-  position: absolute;
-  top: 90%;
-  right: 1%;
-  justify-content: space-between;
+  color: var(--white-color);
+  display: inline;
+  position: relative;
+  margin-left: 80px;
+  margin-bottom: 0px;
 }
 .pageList-item__more {
 }
 .pageList-item__like {
   margin-right: 5px;
 }
+.pageList-item__action {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+}
 .pageList-item__play {
   font-size: 100px;
   background-color: rgba(0, 0, 0, 0);
-  position: absolute;
   top: 20%;
   left: 20%;
   border: none;
@@ -274,6 +278,7 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   margin-left: 35px;
+  position: relative;
 }
 .explore-trending {
   margin-left: 495px;
@@ -287,5 +292,9 @@ a {
   height: 48px;
 }
 .btn-account {
+  display: none;
+}
+
+.pageList-item__action {
   display: none;
 }
