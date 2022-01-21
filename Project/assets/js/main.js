@@ -10,11 +10,6 @@ const songImages = $$('.pageList-item__head')
 
 const songAction = $$('.pageList-item__action')
 
- HEAD
-function start(){
-    handleEven();
-
-    handleEvenForm();
 
 //
 const playList = $('.trendingTrack__row')
@@ -457,5 +452,4 @@ const app = {
     }
 }
 app.start()
-
 }
