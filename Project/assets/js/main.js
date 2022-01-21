@@ -25,7 +25,7 @@ const nextBtn = $('.btn-next')
 const prevBtn = $('.btn-prev')
 const randomBtn = $('.btn-random')
 const repeatBtn = $('.btn-repeat')
-
+const pauseImgBtn = $('.pageList-item__pause--icon')
 
 function starts(){
     handleEven();
@@ -73,6 +73,7 @@ function handleEvenForm(){
     returnBtn.onclick = function(){
     btnAccount.removeChild(modal);
     }
+   const registerBtn = $('.btn btn--primary')
    
   }
   //Xử lí khi hover qua bài hát
@@ -202,7 +203,7 @@ function getSongs(callback){
 
 function createSongs(musics){
     var songs =[]
-    for( var i =0; i < musics.length; i++){
+    for( var i =0; i < 15; i++){
         songs.push(musics[i]) 
     }      
         
@@ -216,7 +217,7 @@ const app = {
         const htmls = this.songs.map((song,index) =>{
             
             return `
-                <div class="pageList-item ${index ===this.currentIndex ? 'active' : ' '}">
+                <div class="pageList-item ${index ===this.currentIndex ? 'active' : ' '}" data-index="${index}">
                     <div class="pageList-item__head">
                         <img src="${song.image}" class="pageList-item__img">
                                     <!--ACTION-->
@@ -276,12 +277,8 @@ const app = {
                 if(audio.duration ){
                     isMouseDown = false
                     const progressPercent = Math.floor(audio.currentTime/audio.duration*100)
-                    console.log(progressPercent)
                     progress.value = progressPercent  
-                                 
-                   
-                    
-                    
+
                     //Hiển thị thời gian chạy được
                     var minues = Math.floor(audio.currentTime/60)
                     var sec = Math.floor(audio.currentTime);
@@ -314,7 +311,7 @@ const app = {
                 }
                 audio.play()
                 _this.render();
-                _this.scrollToActiveSong()
+                
             }
             //Khi bấm prev
             prevBtn.onclick = function (){
@@ -325,7 +322,7 @@ const app = {
                 }
                 audio.play()
                 _this.render();
-                _this.scrollToActiveSong()
+               
             }
             //Khi bấm bật bài random
             randomBtn.onclick= function (){
@@ -345,6 +342,25 @@ const app = {
             repeatBtn.onclick= function (){
                 _this.isRepeat = !_this.isRepeat
                 repeatBtn.classList.toggle('active',_this.isRepeat)
+            }
+            //Lắng nghe hành vi click vào playlist 
+            playList.onclick = function(e){
+                const songNode = e.target.closest('.pageList-item:not(.active)')
+                if(songNode ||e.target.closest('.pageList-item__option')){
+                    //Xu li click vao song
+                    if(songNode ){
+                        console.log(songNode.dataset.index)
+                        _this.currentIndex = songNode.dataset.index
+                        _this.loadCurrentSong()
+                        _this.render()
+                        audio.play()
+                        pauseImgBtn.style.display = "block !important"
+                    }
+                    //Xu li khi click vao option
+                    if(e.target.closest('.pageList-item__option')){
+
+                    }
+                }   
             }
         },
 
