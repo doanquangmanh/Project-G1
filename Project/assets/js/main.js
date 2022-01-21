@@ -1,5 +1,6 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
+songsApi = "https://music-world-g1.herokuapp.com/songs"
 
 const loginBtns = $$('.signIn')
 const signUpBtns = $$('.signUp')
@@ -8,8 +9,12 @@ const btnAccount = $('.btn-account')
 const songImages = $$('.pageList-item__head')
 const songAction = $$('.pageList-item__action')
 
+//
+const playList = $('.trendingTrack__row')
 function start(){
-    handleEven()
+    handleEven();
+    getSongs(renderSong)
+    
 }
 start()
 
@@ -164,3 +169,39 @@ function renderSignUpForm(){
     handleEvenForm()
 }
 
+//MUSIC
+function getSongs(callback){
+    fetch(songsApi)
+        .then(function(response){
+            return response.json();
+        })
+        .then(callback)   
+    }
+
+function renderSong(songs){
+    var htmls = songs.map(function(song){
+        return `
+        <div class="pageList-item">
+            <div class="pageList-item__head">
+                <img src="${song.image}" class="pageList-item__img">
+                            <!--ACTION-->
+                <div class="pageList-item__action">
+                    <div class="pageList-item__option">
+                        <i class="fas fa-heart pageList-item__like"></i>
+                        <i class="fas fa-ellipsis-h pageList-item__more"></i>
+                    </div>
+                    <div class="pageList-item__play">
+                        <i class="fas fa-play pageList-item__play--icon"></i>
+                        <i class="fas fa-pause pageList-item__pause--icon"></i>
+                    </div>             
+                </div> 
+            </div>
+            <div class="pageList-item__body">
+                <a class="pageList-item__name" href="">${song.name}</a><br>
+                <a class="pageList-item__singer" href="">${song.singer}</a>
+            </div>
+         </div>
+        `
+    })
+    playList.innerHTML = htmls.join(' ');
+}
