@@ -209,11 +209,13 @@ a {
   height: 223px;
   flex-basis: 19%;
   margin-top: 35px;
+  position: relative;
 }
 .pageList-item__head {
   height: 182px;
   width: 100%;
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .pageList-item__img {
   background-repeat: no-repeat;
@@ -229,13 +231,14 @@ a {
 .pageList-item__name {
   color: var(--text-color);
 }
+
 .pageList-item__option {
+  position: absolute;
   font-size: 15px;
   color: var(--white-color);
   display: inline;
-  position: relative;
-  margin-left: 80px;
-  margin-bottom: 0px;
+  top: 75%;
+  right: 25%;
 }
 .pageList-item__more {
 }
@@ -243,20 +246,35 @@ a {
   margin-right: 5px;
 }
 .pageList-item__action {
-  position: absolute;
   top: 20%;
   left: 20%;
 }
+.pageList-item__action {
+  display: none;
+}
 .pageList-item__play {
+  position: absolute;
   font-size: 100px;
   background-color: rgba(0, 0, 0, 0);
   top: 20%;
   left: 20%;
   border: none;
+  display: flex;
+}
+.pageList-item__play:hover {
+  cursor: pointer;
 }
 .pageList-item__play--icon {
   color: var(--primary-color);
 }
+
+.pageList-item__pause--icon {
+  color: var(--primary-color);
+  position: relative;
+  left: -90px;
+  display: none !important;
+}
+
 .pageList-item__body {
   font-size: 1.4rem;
   color: var(--text-color);
@@ -284,9 +302,7 @@ a {
   width: 253px;
   height: 48px;
 }
-.pageList-item__action {
-  display: none;
-}
+
 /*TEASER*/
 .frontMobileTeaser {
   height: 500px;
