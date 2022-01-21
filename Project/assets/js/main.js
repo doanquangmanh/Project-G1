@@ -10,6 +10,12 @@ const songImages = $$('.pageList-item__head')
 
 const songAction = $$('.pageList-item__action')
 
+ HEAD
+function start(){
+    handleEven();
+
+    handleEvenForm();
+
 //
 const playList = $('.trendingTrack__row')
 const coverImage = $('.image__lightOutline--child')
@@ -31,6 +37,7 @@ function starts(){
     handleEven();
     getSongs(createSongs)
     
+
 }
 starts()
 
@@ -64,6 +71,32 @@ function handleEven(){
     
 }
 
+// tạo mới 1 tài khoản
+var userApi = 'http://localhost:3000/users';
+
+function getUser(callback) { // mac dinh la get
+    fetch(userApi)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(callback);
+}
+
+function createAccount(data, callback) {
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+          },
+        body: JSON.stringify(data)
+    }
+    fetch(courseApi, options)
+        .then(function(reponse) {
+            response.json();
+        })
+        .then(callback)
+}
+
 //XỬ LÍ FORM ĐĂNG NHẬP, ĐĂNG KÝ
 function handleEvenForm(){
     const modal = $('.modal')
@@ -76,6 +109,19 @@ function handleEvenForm(){
    const registerBtn = $('.btn btn--primary')
    
   }
+  //register
+    var registerBtn = document.querySelector('#register-btn');
+    registerBtn.onclick = function() {
+        var account = document.querySelector('input[name="acc"]').value;
+        var password = document.querySelector('input[name="password"]').value;
+        
+        var formData = {
+            account: email,
+            password: password
+        };
+
+        createAccount(formData);
+    }
   //Xử lí khi hover qua bài hát
 
 
@@ -109,7 +155,7 @@ function renderLoginForm(){
                         <div>
                                 <div class="auth-form__controls">
                                     <button class="btn auth-form__controls-back">Return</button>
-                                    <button class="btn btn--primary">Login</button>
+                                    <button id="btn-login" class="btn btn--primary">Login</button>
                                 </div>
                                 <div class="auth-form__socials">
                                 <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
@@ -150,13 +196,13 @@ function renderSignUpForm(){
                 <div class="auth-form__container">
                     <div class="auth-form__form">
                         <div class="auth-form__group">
-                            <input type="text" class="auth-form__input" placeholder="Nhập tài khoản đăng ký">
+                            <input type="email" class="auth-form__input" name="acc" placeholder="Nhập tài khoản đăng ký">
                         </div>
                         <div class="auth-form__group">
-                            <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu của bạn">
+                            <input type="password" class="auth-form__input" name="password" placeholder="Nhập mật khẩu của bạn">
                         </div>
                         <div class="auth-form__group">
-                            <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu">
+                            <input type="password" class="auth-form__input" name="re-password" placeholder="Nhập lại mật khẩu">
                         </div>
                         <div class="auth-form__aside">
                             <p class="auth-form__policy-text">
@@ -169,7 +215,7 @@ function renderSignUpForm(){
                         <div>
                                 <div class="auth-form__controls">
                                     <button class="btn auth-form__controls-back">Return</button>
-                                    <button class="btn btn--primary">Register</button>
+                                    <button id="register-btn" class="btn btn--primary">Register</button>
                                 </div>
                                 <div class="auth-form__socials">
                                 <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
