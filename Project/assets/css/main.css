@@ -274,7 +274,16 @@ a {
   left: -90px;
   display: none !important;
 }
-
+.action .pageList-item__pause--icon {
+  display: block !important;
+}
+.pageList-item__pause {
+  font-size: 100px;
+  position: absolute;
+  margin-left: 130px;
+  margin-top: 50px;
+  display: flex;
+}
 .pageList-item__body {
   font-size: 1.4rem;
   color: var(--text-color);
