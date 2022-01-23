@@ -28,7 +28,7 @@ function starts(){
 starts()
 
 //XỬ LÍ KHI CLICK
-function handleEven(){
+function handleEvents(){
     const songImages = $$('.pageList-item__head') 
     const songAction = $$('.pageList-item__action')
     
@@ -107,7 +107,7 @@ const app = {
             
         })
             playList.innerHTML = htmls.join(' ')
-        handleEven()
+        handleEvents()
     },
     defineProperties: function(){
         Object.defineProperty(this, 'currentSong', {

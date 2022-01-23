@@ -132,6 +132,91 @@
     </div>    
     <!--FORM ĐĂNG NHẬP(ĐĂNG KÝ)-->
     <div class="btn-account">
+        <div class="modal">
+            <div class="modal__overlay"></div>
+            <div class="modal__body"> 
+                
+            <!--Register form-->
+                    <div class="auth-form" id="signUp-form" >
+                        <div class="auth-form__container">
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input id="accountSignUp" type="text" class="auth-form__input" name="acc" placeholder="Nhập tài khoản đăng ký">
+                        </div>
+                        <div class="auth-form__group">
+                            <input id="passwordSignUp" type="password" class="auth-form__input" name="password" placeholder="Nhập mật khẩu của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input id="re-passwordSignUp" type="password" class="auth-form__input" name="re-password" placeholder="Nhập lại mật khẩu">
+                        </div>
+                        <div class="auth-form__aside">
+                            <p class="auth-form__policy-text">
+                                When registering, you agree that we may use your provided data for the registration
+                                    and to send you notifications on our products and services. You can unsubscribe from 
+                                    notifications at any time in your settings. For additional info 
+                                    please refer to our <a href="" class="auth-form__policy-link">Privacy Policy.</a>
+                            </p>
+                        </div>
+                        <div>
+                                <div class="auth-form__controls">
+                                    <button  type="reset" class="btn auth-form__controls-back">Return</button>
+                                    <button id="register-btn" class="btn btn--primary">Register</button>
+                                </div>
+                                <div class="auth-form__socials">
+                                <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                                    <i class="fab fa-facebook auth-form__socials-icon"></i>
+                                    <span class="auth-form__socials-lable-title">  Continue with Facebook </span>
+                                </a>
+                                <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                                    <i class="fab fa-google auth-form__socials-icon"></i>
+                                    <span class="auth-form__socials-lable-title"> Continue with Google</span>
+                                </a>
+                                </div>
+                        </div>
+                    </div>
+                        </div>
+                     </div> 
+            
+            <!--LoginForm-->
+         
+                <div class="auth-form" id="login-form">
+                    <div class="auth-form__container">
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <input type="text" class="auth-form__input" placeholder="Enter your account">
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="password" class="auth-form__input" placeholder="Enter your password">
+                            </div>
+                            <div class="auth-form__aside">
+                                <div class="auth-form__help">
+                                    <a href="" class=" auth-form__help--forgot">Forgot password?</a>
+                                    <span class="auth-form__help-separate"></span>
+                                    <a href="" class="auth-form__help-link">You need help?</a>
+                                </div>
+                            </div>
+                            <div>
+                                    <div class="auth-form__controls">
+                                        <button type="reset" class="btn auth-form__controls-back">Return</button>
+                                        <button id="btn-login" class="btn btn--primary">Login</button>
+                                    </div>
+                                    <div class="auth-form__socials">
+                                    <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                                        <i class="fab fa-facebook auth-form__socials-icon"></i>
+                                        <span class="auth-form__socials-lable-title">  Continue with Facebook </span>
+                                    </a>
+                                    <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                                        <i class="fab fa-google auth-form__socials-icon"></i>
+                                        <span class="auth-form__socials-lable-title"> Continue with Google</span>
+                                    </a>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                   
+            </div>
+        </div>    
     </div>
     <!--FORM ĐĨA-->
     <div class="playControls">
@@ -196,7 +281,15 @@
         </div>
         <audio id="audio" src=""></audio>
     </div>
+    <div class="notify">
+        <div class="modal__overlay"></div>
+        <div class="notify__form">
+        <h1>Successful account registration, do you want to go to the homepage?</h1>
+        <a href="/Home.html" class="btn btnHomePage" >Home</a>
+        </div>
+    </div> 
 </body>
 <script src="./assets/js/main.js"></script>
 <script src="./assets/js/account.js"></script>
+
 </html>
