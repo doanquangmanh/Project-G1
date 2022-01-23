@@ -1,0 +1,41 @@
+
+  .playControls {
+    width: 100%;
+    height: 50px;
+    background-color: #f2f2f2;
+    position: fixed;
+    margin-left: 0px;
+    display: flex;
+    bottom: 0;
+    border-top: #d6d6d6 solid 1px;
+  }
+  #audioPlayer{
+    width: 680px;
+    float: left;
+    height: 50px;
+  }
+  .playControls__item {
+    width: 1240px;
+    height: 100%;
+    margin-left: 140px;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    align-items: center;
+  }
+  .play{
+    display: flex;
+    margin-top:3px;
+  }
+  .playback a{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    
+  }
+  .playback a:hover{
+    color:rgb(54, 139, 209);
+  }
+  .playback{
+    padding: 5px 5px;
+  }
