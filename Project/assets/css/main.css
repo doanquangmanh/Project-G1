@@ -7,14 +7,28 @@
   color: white;
   position: relative;
   border-top: solid #f50;
+  background-size: cover;
 }
 .header__navbar {
   display: inline;
 }
+.header-logo {
+  color: var(--white-color);
+}
+.header-logo__icon {
+  font-size: 30px;
+  color: #fff;
+  position: absolute;
+  top: 26%;
+}
+.header-logo__text {
+  margin-left: 35px;
+  color: #f9f6f7;
+}
 .logo {
   width: 163px;
   height: 23px;
-  top: 25px;
+  top: 20px;
   left: 29px;
   position: absolute;
 }
@@ -180,6 +194,7 @@ a {
   border-radius: 5px;
   background-color: rgb(242 242 242);
   outline: none;
+  padding-left: 10px;
 }
 .search-btn-icon {
   font-size: 2.5rem;
@@ -455,7 +470,7 @@ v.g-type-marketing-header {
 .footer {
   width: 100%;
   background-color: #f50;
-  position: relative;
+  position: absolute;
   margin-top: 679px;
   color: rgb(204 204 204);
   background-color: rgb(255 255 255);
