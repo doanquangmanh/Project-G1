@@ -31,7 +31,8 @@ starts()
 function handleEvents(){
     const songImages = $$('.pageList-item__head') 
     const songAction = $$('.pageList-item__action')
-    
+    const pauseIcons = $$('.pageList-item__pause')
+    console.log(songImages)
     //xử lí khi hover qua bài hát
    songImages.forEach(function(songImage,i){
      songImage.onmouseover = function(){
@@ -42,15 +43,13 @@ function handleEvents(){
      }
     })
     ///
-    songImages.forEach(function(songImage,i){
-        songImage.onclick = function(e){
-            if(e.target.closest('.pageList-item__head')){
-                songImages[i].classList.add('action')
-            }           
-            console.log(songImages[i])
+
+    pauseIcons.forEach(function( pauseIcon,i){
+        pauseIcon.onclick = function(){
+            pauseIcons[i].style.display = "block !important"
+            console.log(pauseIcons[i])
         }
     })
-    
 }
 
 
@@ -91,11 +90,11 @@ const app = {
                                 <i class="fas fa-ellipsis-h pageList-item__more"></i>
                             </div>
                             <div class="pageList-item__play">
-                                <i class="fas fa-play pageList-item__play--icon"></i>
+                                <i class="fas fa-play-circle pageList-item__play--icon"></i>
                             </div>
                         </div> 
                         <div class="pageList-item__pause">  
-                                <i class="fas fa-pause pageList-item__pause--icon"></i>
+                                <i class="fas fa-pause-circle pageList-item__pause--icon"></i>
                         </div>
                     </div>
                     <div class="pageList-item__body">
@@ -218,11 +217,11 @@ const app = {
                 if(songNode ||e.target.closest('.pageList-item__option')){
                     //Xu li click vao song
                     if(songNode&& !e.target.closest('.pageList-item__option') ){
-                        _this.currentIndex = songNode.dataset.index
+                        _this.currentIndex = Number(songNode.dataset.index)
                         _this.loadCurrentSong()
                         _this.render()
                         audio.play()
-                        console.log(_this.currentIndex)                 
+                    
                     }
                     //Xu li khi click vao option
                     if(e.target.closest('.pageList-item__option')){

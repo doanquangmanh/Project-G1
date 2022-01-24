@@ -271,10 +271,8 @@ a {
 .pageList-item__play {
   position: absolute;
   font-size: 100px;
-  background-color: rgba(0, 0, 0, 0);
   top: 20%;
   left: 20%;
-  border: none;
   display: flex;
 }
 .pageList-item__play:hover {
@@ -282,11 +280,13 @@ a {
 }
 .pageList-item__play--icon {
   color: var(--primary-color);
+  background-color: var(--white-color);
+  border-radius: 50px;
 }
 
 .pageList-item__pause--icon {
   color: var(--primary-color);
-  position: relative;
+  position: absolute;
   left: -90px;
   display: none !important;
 }
@@ -296,8 +296,8 @@ a {
 .pageList-item__pause {
   font-size: 100px;
   position: absolute;
-  margin-left: 130px;
-  margin-top: 50px;
+  margin-left: 135px;
+  margin-top: 45px;
   display: flex;
 }
 .pageList-item__body {
