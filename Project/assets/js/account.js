@@ -1,17 +1,17 @@
 const memberApi = "https://music-world-g1.herokuapp.com/member"
 
-const returnBtn = $$('.auth-form__controls-back')
-const loginBtns = $$('.signIn')
-const signUpBtns = $$('.signUp')
-const modal = $('.btn-account')
-const sigUpForm = $('#signUp-form')
-const loginForm = $('#login-form')
-const notify = $('.notify')
-const btnHomePage = $('.btnHomePage')
+const returnBtn = document.querySelectorAll('.auth-form__controls-back')
+const loginBtns = document.querySelectorAll('.signIn')
+const signUpBtns = document.querySelectorAll('.signUp')
+const modal = document.querySelector('.btn-account')
+const sigUpForm = document.querySelector('#signUp-form')
+const loginForm = document.querySelector('#login-form')
+const notify = document.querySelector('.notify')
+const btnHomePage = document.querySelector('.btnHomePage')
 
 //2 nút 2 form đăng ký, đăng nhập
-const registerBtn = $('#register-btn')
-const SigInBtn = $('#btn-login')
+const registerBtn = document.querySelector('#register-btn')
+const SigInBtn = document.querySelector('#btn-login')
 
 function start(){
     HandleEvents()
