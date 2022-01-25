@@ -288,17 +288,18 @@ a {
   color: var(--primary-color);
   position: absolute;
   left: -90px;
-  display: none !important;
+  background-color: var(--white-color);
+  border-radius: 50px;
 }
-.action .pageList-item__pause--icon {
-  display: block !important;
+.action .pageList-item__pause {
+  display: block;
 }
 .pageList-item__pause {
   font-size: 100px;
   position: absolute;
   margin-left: 135px;
   margin-top: 45px;
-  display: flex;
+  display: none;
 }
 .pageList-item__body {
   font-size: 1.4rem;
