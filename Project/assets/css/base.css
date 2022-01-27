@@ -227,32 +227,58 @@ body {
   color: #f50;
   margin-top: -5px;
   position: fixed;
+  -webkit-appearance: none;
 }
 .progress {
   width: 512px;
   height: 1px;
 }
+
 .playbackTimeline__duration {
   margin-left: 570px;
   position: fixed;
 }
+.volume--background--range {
+  transform: rotate(-90deg);
+  margin-left: 10px;
+  margin-top: -30px;
+  display: flex;
+}
+.volume--background {
+  position: fixed;
+  background-color: #f2f2f2;
+  border: #dddddd solid 1px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 10px;
+  border-radius: 25px;
+  display: none;
+}
+.volume--range {
+  height: 2px;
+  width: 100px;
+}
 .volume {
   display: flex;
-  justify-content: center;
   position: fixed;
-  margin-left: 880px;
+  margin-left: 250px;
+}
+.volume--icon {
+  margin-left: 630px;
+  font-size: 15px;
 }
 .volume-up {
-  position: relative;
+  bottom: 15px;
+  position: fixed;
 }
 .volume-down {
-  left: -16px;
-  position: relative;
+  position: fixed;
+  bottom: 15px;
   display: none !important;
 }
 .volume-mute {
-  left: -31px;
-  position: relative;
+  position: fixed;
+  bottom: 15px;
   display: none !important;
 }
 .playbackSoundBadge {

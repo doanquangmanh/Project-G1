@@ -19,6 +19,13 @@ const prevBtn = $('.btn-prev')
 const randomBtn = $('.btn-random')
 const repeatBtn = $('.btn-repeat')
 const pauseImgBtn = $('.pageList-item__pause--icon')
+const volume = $('.volume')
+const volumeTarget = $('.volume--background')
+const volumeRange = $('.volume--range')
+const volumeDown = $('.volume-down')
+const volumeUp = $('.volume-up')
+const volumeMute = $('.volume-mute')
+console.log(volumeDown,volumeUp, volumeMute)
 
 function starts() {
     getSongs(createSongs)
@@ -29,7 +36,7 @@ starts()
 function handleEvents() {
     const songImages = $$('.pageList-item__head')
     const songAction = $$('.pageList-item__action')
-    const pauseImgs = $$('.pageList-item__pause')
+    
 
 
 
@@ -131,11 +138,13 @@ function createSongs(musics) {
             audio.onplay = function () {
                 _this.isPlaying = true
                 player.classList.add('playing')
+               
             }
             //Khi dừng bài hát
             audio.onpause = function () {
                 _this.isPlaying = false
                 player.classList.remove('playing')
+              
             }
 
 
@@ -236,15 +245,43 @@ function createSongs(musics) {
                 else if (e.target.closest('.active') && _this.isPlaying === false) {
                     audio.play()
                     songImage.classList.add('action')
-                }
-               
-                console.log(pauseImg)
-                
+                }               
                 if (pauseImg) {
                     audio.pause()
                     songImage.classList.remove('action')
                 }
             }
+            //Xu li voi volume
+
+            //Khi hover volume 
+            volume.onmouseover = function(){
+                volumeTarget.style.display = "block"
+            }
+            volumeTarget.onmouseout = function(){
+                volumeTarget.style.display = "none"
+            }
+
+            //
+            volumeRange.onchange = function (e) {
+                const volumeValue = 1/ 10 * e.target.value
+                audio.volume = volumeValue
+                console.log(audio.volume)
+                // if(audio.volume <= 0.5 && audio.volume > 0){
+                //     volumeUp.style.display = "none !important"
+                //     volumeDown.style.display = "block"
+                //     volumeMute.style.display = "none "
+                // }else if(audio.volume === 0){
+                //     volumeMute.style.display = "block !important"
+                //     volumeDown.style.display = "none !important"
+                //     volumeUp.style.display = "none !important"
+                // }else if(audio > 0.5){
+                //     volumeUp.style.display = "block !important"
+                //     volumeDown.style.display = "none !important"
+                //     volumeMute.style.display = "none !important"
+                // }
+            }
+           
+            
         },
 
 
@@ -285,8 +322,6 @@ function createSongs(musics) {
 
             //Tai thong tin bai hat dau tien vao UI
             this.loadCurrentSong()
-
-
 
             //Render Songs
             this.render()

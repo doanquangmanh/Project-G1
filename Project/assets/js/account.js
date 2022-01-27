@@ -9,6 +9,7 @@ const loginForm = document.querySelector('#login-form')
 const notify = document.querySelector('.notify')
 const btnHomePage = document.querySelector('.btnHomePage')
 
+
 //2 nút 2 form đăng ký, đăng nhập
 const registerBtn = document.querySelector('#register-btn')
 const SigInBtn = document.querySelector('#btn-login')
