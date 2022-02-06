@@ -25,7 +25,8 @@ const volumeRange = $('.volume--range')
 const volumeDown = $('.volume-down')
 const volumeUp = $('.volume-up')
 const volumeMute = $('.volume-mute')
-console.log(volumeDown,volumeUp, volumeMute)
+const volumeIcon = $('.volume--icon')
+const playbackSoundBadge = $('.playbackSoundBadge')
 
 function starts() {
     getSongs(createSongs)
@@ -36,10 +37,6 @@ starts()
 function handleEvents() {
     const songImages = $$('.pageList-item__head')
     const songAction = $$('.pageList-item__action')
-    
-
-
-
 
     //xử lí khi hover qua bài hát
     songImages.forEach(function (songImage, i) {
@@ -50,12 +47,6 @@ function handleEvents() {
             songAction[i].style.display = "none"
         }
     })
-
-
-
- 
-
-
 }
 
 
@@ -221,8 +212,6 @@ function createSongs(musics) {
                 repeatBtn.classList.toggle('active', _this.isRepeat)
             }
             //Lắng nghe hành vi click vào playlist 
-          
-      
             playList.onclick = function (e) {
                 const pauseImg = e.target.closest('.pageList-item__pause')
                 const songNode = e.target.closest('.pageList-item:not(.active)')
@@ -252,38 +241,69 @@ function createSongs(musics) {
                 }
             }
             //Xu li voi volume
-
             //Khi hover volume 
-            volume.onmouseover = function(){
+            volume.onmouseover = function(e){
                 volumeTarget.style.display = "block"
             }
-            volumeTarget.onmouseout = function(){
+            playbackSoundBadge.onmouseover = function(){
                 volumeTarget.style.display = "none"
             }
-
-            //
-            volumeRange.onchange = function (e) {
-                const volumeValue = 1/ 10 * e.target.value
-                audio.volume = volumeValue
-                console.log(audio.volume)
-                // if(audio.volume <= 0.5 && audio.volume > 0){
-                //     volumeUp.style.display = "none !important"
-                //     volumeDown.style.display = "block"
-                //     volumeMute.style.display = "none "
-                // }else if(audio.volume === 0){
-                //     volumeMute.style.display = "block !important"
-                //     volumeDown.style.display = "none !important"
-                //     volumeUp.style.display = "none !important"
-                // }else if(audio > 0.5){
-                //     volumeUp.style.display = "block !important"
-                //     volumeDown.style.display = "none !important"
-                //     volumeMute.style.display = "none !important"
-                // }
+            songTime.onmouseout = function(){
+                volumeTarget.style.display = "none"
             }
-           
+            volumeTarget.onmouseout = function(e){
+                if(e.target.closest('.volume')){
+                    volumeTarget.style.display = "none"
+                }
+            }
+            //Khi chinh volume
+            var currentVolume = audio.volume
+            volumeRange.onchange = function (e) {
+                const volumeValue = 1/ 10 * e.target.value 
+                audio.volume = volumeValue
+                currentVolume = volumeValue
+                if(audio.volume > 0.5){
+                    volume.classList.add('volumeUp')
+                    volume.classList.remove('volumeDown')
+                    volume.classList.remove('volumeMute')
+                }else if (audio.volume <= 0.5 && audio.volume >0){
+                    volume.classList.remove('volumeUp')
+                    volume.classList.add('volumeDown')
+                    volume.classList.remove('volumeMute')
+                }else if(audio.volume === 0){
+                    volume.classList.remove('volumeUp')
+                    volume.classList.remove('volumeDown')
+                    volume.classList.add('volumeMute')
+                }
+            }
+           //Khi click vao nut volume
+            volumeIcon.onclick = function(e){
+                if(audio.volume !== 0){
+                    audio.volume = 0
+                    volumeRange.value = 0
+                    
+                }else if(audio.volume === 0){
+                    audio.volume = currentVolume
+                    volumeRange.value = currentVolume *10
+                    console.log(currentVolume)
+                }
+                if(audio.volume > 0.5){
+                    volume.classList.add('volumeUp')
+                    volume.classList.remove('volumeDown')
+                    volume.classList.remove('volumeMute')
+                }else if (audio.volume <= 0.5 && audio.volume >0){
+                    volume.classList.remove('volumeUp')
+                    volume.classList.add('volumeDown')
+                    volume.classList.remove('volumeMute')
+                }else if(audio.volume === 0){
+                    volume.classList.remove('volumeUp')
+                    volume.classList.remove('volumeDown')
+                    volume.classList.add('volumeMute')
+                }
+            }
+         
             
         },
-
 
         loadCurrentSong: function () {
             songName.textContent = this.currentSong.name

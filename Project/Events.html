@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MusicWorld</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/Event.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./assets/fonts/fontawesome/fontawesome-free-5.15.4-web/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="head">
+            <div class="header-main">
+                <div class="header-main__item">
+                    <a class="btn" id="header-logo" href="/Project/index.html">
+                        <div class="header-logo__icon">
+                            <i class="fas fa-compact-disc "></i>
+                        </div>
+                        <h1  class="header-logo__text">MusicWorld</h1>
+                    </a>
+                    <div class="header-center">
+                        <ul>
+                            <li><a href="./Home.html" class="home">Home</a></li>
+                            <li><a href="./Events.html" class="events">Events</a></li>
+                            <li><a href="" class="library">Library</a></li>
+                        </ul>
+                    </div>
+                    <div class="header-search">
+                        <input class="headerSearch" placeholder="Search for artists, bands, tracks, podcasts"
+                            type="search" name="q" autocomplete="off" aria-label="Search" aria-autocomplete="list"
+                            aria-owns="searchMenuList">
+                        <i class="fas fa-search icon-search"></i>
+                    </div>
+                    <div class="header-login">
+                        <button type="button" class="Sign-in signIn" tabindex="0" title="Sign in" aria-label="Sign in">Sign
+                            in</button>
+                        <button type="button" class="login signUp" tabindex="0" title="Create account"
+                            aria-label="Create account">Create account</button>
+                    </div>
+                    <div class="header-upload">
+                        <a href="" class="load"><span>Upload</span></a>
+                        <i class="fas fa-ellipsis-h load__icon"></i>
+                    </div>
+                    <!-- <div class="header-about"> 
+                        <ul>
+                            <li>
+                                <a href="">...</a>
+                            </li>
+                        </ul>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--APP-->
+    <div class="app">
+        <div class="main-container" id="appRoute">
+            <div class="banner bg-event">
+                <div class="banner-cover"> </div>
+                <div class="banner-cover__after"></div>
+            </div>
+            <div class="row">
+                <div class="row-center" >
+                    <div class="row-center_background" style="background-image: url('./assets/img/newYear.jpg');">
+                        <div class="row-center__content">
+                        </div>
+                        <div class="event-content">
+                            <div class="event-content__text">
+                                <a href=""><h6>New Year Party</h6></a>
+                            </div>
+                            <span class="countdown mb-3"></span>
+                            <a href="#" class="btn btn-ticket">Buy Ticket</a>
+                        </div>    
+                    </div>
+                </div>
+                <div class="row-eventList">
+                    <div class="row-event">
+                        <div class="row-event__background" style="background-image: url('./assets/img/DJMarshmello.jpg');">
+                            <div class="row-event__content"></div>
+                            <div class="content">
+                                <a href=""><h6>Dance with DJ Marshmello</h6></a>
+                            </div>
+                            <div class="event__location">
+                                <span>Price: k100 Location: Las Vegas</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-event">
+                        <div class="row-event__background" style="background-image: url('./assets/img/1.jpg');">
+                            <div class="row-event__content"></div>
+                            <div class="content">
+                                <a href=""><h6>Lusaka dance with DJ Nowan</h6></a>
+                            </div>
+                            <div class="event__location">
+                                <span>Price: K50 Location: Lusaka</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <footer class="bg-img">
+        <div class="footer-cover"></div>
+        <div class="footer-cover__before"></div>
+    </footer>
+</body>
+</html>
