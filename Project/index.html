@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MusicWorld</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
@@ -50,7 +51,7 @@
                 <!-- <div class="pageList-item">
                     <div class="pageList-item__head">
                         <img src="https://i1.sndcdn.com/artworks-z2gxcCZamslfRFWy-mSu93g-t500x500.jpg" class="pageList-item__img">
-                                        <!--ACTION-->
+                                        <!-- ACTION -->
                         <!-- <div class="pageList-item__action">
                             <div class="pageList-item__option">
                                 <i class="fas fa-heart pageList-item__like"></i>
@@ -165,7 +166,7 @@
                     4:18
                 </div>
             </div>
-            
+
             <div class="volume">
                 <i class="fas fa-volume-up volume-up"></i>
                 <i class="fas fa-volume-down  volume-down"></i>
@@ -186,7 +187,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="btn-like">
+                <div class="btn-like" onclick="document.querySelector('.btn-like').classList.toggle('active')">
                     <i class="fas fa-heart"></i>
                 </div >
                 <div class="btn-follow">
@@ -199,4 +200,5 @@
 </body>
 <script src="./assets/js/main.js"></script>
 <script src="./assets/js/account.js"></script>
+
 </html>

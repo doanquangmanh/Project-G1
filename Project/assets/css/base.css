@@ -132,7 +132,7 @@ body {
 }
 .playControls {
   width: 100%;
-  height: 50px;
+  height: 55px;
   background-color: #f2f2f2;
   position: fixed;
   margin-left: 0px;
@@ -153,20 +153,24 @@ body {
   margin-left: 15px;
   font-size: 16px;
   align-items: center;
+  cursor: pointer;
 }
 .btn-toggle-play {
   margin-left: 26px;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 .pauseBtn {
   position: relative;
   left: -5px;
   display: none !important;
+  cursor: pointer;
 }
 .playBtn {
   position: relative;
   display: inline-block;
+  left: -5px;
 }
 .playing .btn-toggle-play .playBtn {
   display: none !important;
@@ -177,12 +181,15 @@ body {
 }
 .btn-next {
   margin-left: 14px;
+  cursor: pointer;
 }
 .btn-random {
   margin-left: 26px;
+  cursor: pointer;
 }
 .btn-repeat {
   margin-left: 26px;
+  cursor: pointer;
 }
 .playbackTimeline {
   margin-left: 40px;
@@ -199,30 +206,33 @@ body {
 .progress {
   width: 512px;
   height: 1px;
+  cursor: pointer;
 }
 .playbackTimeline__duration {
   margin-left: 570px;
   position: fixed;
 }
+
 .volume {
   display: flex;
   justify-content: center;
   position: fixed;
-  margin-left: 880px;
+  margin-left: 870px;
 }
 .volume-up {
-  position: relative;
+  
 }
 .volume-down {
   left: -16px;
-  position: relative;
+  
   display: none !important;
 }
 .volume-mute {
   left: -31px;
-  position: relative;
+  
   display: none !important;
 }
+
 .playbackSoundBadge {
   display: flex;
   justify-content: space-around;
@@ -259,11 +269,14 @@ body {
   color: var(--text-color);
   font-size: 1.2rem;
 }
+
 .btn-like {
   margin-left: 0px;
   font-size: 1.4rem;
   margin-top: 10px;
+  cursor: pointer;
 }
+
 .btn-follow {
   margin-left: 12px;
   font-size: 1.4rem;

@@ -271,8 +271,6 @@ const app = {
         //Tai thong tin bai hat dau tien vao UI
         this.loadCurrentSong()
 
-       
-
         //Render Songs
         this.render()
     }
