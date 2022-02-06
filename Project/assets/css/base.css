@@ -513,7 +513,10 @@ body {
 .header-center ul li a:hover {
   background-color: #111;
 }
-
+.header-upload {
+  background-color: #333333;
+  color: #c5c5c5;
+}
 .header-search {
   margin-left: 10px;
   margin-top: 8px;
