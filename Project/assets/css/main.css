@@ -7,14 +7,28 @@
   color: white;
   position: relative;
   border-top: solid #f50;
+  background-size: cover;
 }
 .header__navbar {
   display: inline;
 }
+.header-logo {
+  color: var(--white-color);
+}
+.header-logo__icon {
+  font-size: 30px;
+  color: #fff;
+  position: absolute;
+  top: 26%;
+}
+.header-logo__text {
+  margin-left: 35px;
+  color: #f9f6f7;
+}
 .logo {
   width: 163px;
   height: 23px;
-  top: 25px;
+  top: 20px;
   left: 29px;
   position: absolute;
 }
@@ -54,6 +68,7 @@ a {
   color: #fff;
 }
 /*Authen modal */
+
 .auth-form {
   width: 600px;
   height: 100%;
@@ -179,6 +194,7 @@ a {
   border-radius: 5px;
   background-color: rgb(242 242 242);
   outline: none;
+  padding-left: 10px;
 }
 .search-btn-icon {
   font-size: 2.5rem;
@@ -255,10 +271,8 @@ a {
 .pageList-item__play {
   position: absolute;
   font-size: 100px;
-  background-color: rgba(0, 0, 0, 0);
   top: 20%;
   left: 20%;
-  border: none;
   display: flex;
 }
 .pageList-item__play:hover {
@@ -266,23 +280,26 @@ a {
 }
 .pageList-item__play--icon {
   color: var(--primary-color);
+  background-color: var(--white-color);
+  border-radius: 50px;
 }
 
 .pageList-item__pause--icon {
   color: var(--primary-color);
-  position: relative;
+  position: absolute;
   left: -90px;
-  display: none !important;
+  background-color: var(--white-color);
+  border-radius: 50px;
 }
-.action .pageList-item__pause--icon {
-  display: block !important;
+.action .pageList-item__pause {
+  display: block;
 }
 .pageList-item__pause {
   font-size: 100px;
   position: absolute;
-  margin-left: 130px;
-  margin-top: 50px;
-  display: flex;
+  margin-left: 135px;
+  margin-top: 45px;
+  display: none;
 }
 .pageList-item__body {
   font-size: 1.4rem;
@@ -409,7 +426,7 @@ a {
 /**/
 .signupModule {
   width: 100%;
-
+  line-height: 50px;
   height: 500px;
   margin-top: 300px;
   color: var(--text-color);
@@ -454,7 +471,7 @@ a {
 .footer {
   width: 100%;
   background-color: #f50;
-  position: relative;
+  position: absolute;
   margin-top: 679px;
   color: rgb(204 204 204);
   background-color: rgb(255 255 255);

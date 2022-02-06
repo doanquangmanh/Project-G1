@@ -1,156 +1,103 @@
-const memberAPI = "https://music-world-g1.herokuapp.com/member"
-// const $ = document.querySelector.bind(document);
-// const $$ = document.querySelectorAll.bind(document);
+const memberApi = "https://music-world-g1.herokuapp.com/member"
 
-const loginBtns = $$('.signIn')
-const signUpBtns = $$('.signUp')
-const btnAccount = $('.btn-account')
+const returnBtn = document.querySelectorAll('.auth-form__controls-back')
+const loginBtns = document.querySelectorAll('.signIn')
+const signUpBtns = document.querySelectorAll('.signUp')
+const modal = document.querySelector('.btn-account')
+const sigUpForm = document.querySelector('#signUp-form')
+const loginForm = document.querySelector('#login-form')
+const notify = document.querySelector('.notify')
+const btnHomePage = document.querySelector('.btnHomePage')
+
+
+//2 nút 2 form đăng ký, đăng nhập
+const registerBtn = document.querySelector('#register-btn')
+const SigInBtn = document.querySelector('#btn-login')
 
 function start(){
-    handleEvent()
+    HandleEvents()
+    getMembers(getAccount)
+    
+    //getAccount()
+  
 }
 start()
 
-function handleEvent(){
-
-    //Xử lí khi bấm vào nút đăng kí
+function HandleEvents(){
     signUpBtns.forEach(function(signUpBtn){
-        signUpBtn.onclick=function(){
-            renderSignUpForm()
+        signUpBtn.onclick = function(){
+            modal.style.display = "block"
+            loginForm.style.display = "none"
         }
     })
-   
-    //Xử lí khi bấm vào login
-    loginBtns.forEach(function(loginBtn,i){
-        loginBtn.onclick=function(){ 
-            renderLoginForm()
+    loginBtns.forEach(function(loginBtn){
+        loginBtn.onclick = function(){
+            modal.style.display = "block"
+            sigUpForm.style.display = "none"
         }
     })
-}
-//XỬ LÍ FORM ĐĂNG NHẬP, ĐĂNG KÝ
-function handleEvenForm(){
-    const modal = $('.modal')
-    const returnBtn = $('.auth-form__controls-back')
-    console.log(returnBtn)
-    //Xử lí khi bấm return 
-    returnBtn.onclick = function(){
-    btnAccount.removeChild(modal);
+    //Nút return Form đăng ký
+    returnBtn[0].onclick = function(){
+        modal.style.display = "none"
+        loginForm.style.display = "block"
     }
-   const registerBtn = $('.btn btn--primary')
-   
-  }
-//RENDER FORM ĐĂNG NHẬP ĐĂNG KÝ
-function renderLoginForm(){
-    if(btnAccount){
-        const modal = document.createElement('div')
-        modal.classList.add('modal')
-        btnAccount.style.display = "block"
-        modal.innerHTML = `
+    //Nút return form đăng nhập
+    returnBtn[1].onclick = function(){
+        modal.style.display = "none"
+        sigUpForm.style.display = "block"
         
-            <div class="modal__overlay"></div>
-            <div class="modal__body">           
-                <!--Login form-->
-            <form action="/Home.html" method="post" onsubmit="return validate()">
-                <div class="auth-form">
-                    <div class="auth-form__container">
-                        <div class="auth-form__form">
-                            <div class="auth-form__group">
-                                <input type="text" class="auth-form__input" placeholder="Enter your account">
-                            </div>
-                            <div class="auth-form__group">
-                                <input type="password" class="auth-form__input" placeholder="Enter your password">
-                            </div>
-                            <div class="auth-form__aside">
-                                <div class="auth-form__help">
-                                    <a href="" class=" auth-form__help--forgot">Forgot password?</a>
-                                    <span class="auth-form__help-separate"></span>
-                                    <a href="" class="auth-form__help-link">You need help?</a>
-                                </div>
-                            </div>
-                            <div>
-                                    <div class="auth-form__controls">
-                                        <button class="btn auth-form__controls-back">Return</button>
-                                        <button id="btn-login" class="btn btn--primary">Login</button>
-                                    </div>
-                                    <div class="auth-form__socials">
-                                    <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
-                                        <i class="fab fa-facebook auth-form__socials-icon"></i>
-                                        <span class="auth-form__socials-lable-title">  Continue with Facebook </span>
-                                    </a>
-                                    <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
-                                        <i class="fab fa-google auth-form__socials-icon"></i>
-                                        <span class="auth-form__socials-lable-title"> Continue with Google</span>
-                                    </a>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-       
-        `;
-        btnAccount.appendChild(modal)
     }
+
+    //
+    btnHomePage.onclick = function(){
+        notify.style.display = "none"
+    }
+}
+
+function getMembers(callback){
+    fetch(memberApi)
+        .then(function(response){
+            return response.json()
+        })
+        .then(callback)
+}
+
+function getAccount(members){
     
-    handleEvenForm()
+    registerBtn.onclick = function(){
+        var account = document.querySelector('input[id="accountSignUp"]').value
+        var password = document.querySelector('input[id="passwordSignUp"]').value
+       var formData = {
+           account:account,
+           password:password
+       }
+       for(var i = 0; i < members.length; i++){
+           if(members[i].account===formData.account){
+                alert('tai khoan ba bi trung, xin vui long dat lai')   
+                break
+           }if(i===members.length-1 && members[i].account!==formData.account){
+                createAccount(formData)   
+                modal.style.display = "none"
+                notify.style.display = "block"
+           }
+       }       
+    }    
 }
-function renderSignUpForm(){
-    btnAccount.style.display = "block"
-    if(btnAccount){
-        const modal = document.createElement('div')
-        modal.classList.add('modal')
-        modal.onclick = function(e){
-            if(e.target.closest('.auth-form__controls-back')){
-                btnAccount.removeChild(modal)
-            }
-        }
-        modal.innerHTML = `
-        <div class="modal__overlay"></div>
-        <div class="modal__body">  
-            <!--Register form-->
-              <div class="auth-form">
-                <div class="auth-form__container">
-                    <div class="auth-form__form">
-                        <div class="auth-form__group">
-                            <input type="email" class="auth-form__input" name="acc" placeholder="Nhập tài khoản đăng ký">
-                        </div>
-                        <div class="auth-form__group">
-                            <input type="password" class="auth-form__input" name="password" placeholder="Nhập mật khẩu của bạn">
-                        </div>
-                        <div class="auth-form__group">
-                            <input type="password" class="auth-form__input" name="re-password" placeholder="Nhập lại mật khẩu">
-                        </div>
-                        <div class="auth-form__aside">
-                            <p class="auth-form__policy-text">
-                                When registering, you agree that we may use your provided data for the registration
-                                    and to send you notifications on our products and services. You can unsubscribe from 
-                                    notifications at any time in your settings. For additional info 
-                                    please refer to our <a href="" class="auth-form__policy-link">Privacy Policy.</a>
-                            </p>
-                        </div>
-                        <div>
-                                <div class="auth-form__controls">
-                                    <button class="btn auth-form__controls-back">Return</button>
-                                    <button id="register-btn" class="btn btn--primary">Register</button>
-                                </div>
-                                <div class="auth-form__socials">
-                                <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
-                                    <i class="fab fa-facebook auth-form__socials-icon"></i>
-                                    <span class="auth-form__socials-lable-title">  Continue with Facebook </span>
-                                </a>
-                                <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
-                                    <i class="fab fa-google auth-form__socials-icon"></i>
-                                    <span class="auth-form__socials-lable-title"> Continue with Google</span>
-                                </a>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>             
-        </div>
-        `;
-        btnAccount.appendChild(modal)
-    }
-    handleEvenForm()
+
+function createAccount(data, callback){
+    var options ={
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                   
+                  },
+                body: JSON.stringify(data)
+            };
+            fetch(memberApi, options)
+                .then(function(response){
+                    response.json();
+                })
+                .then(callback);
+                
 }
+
