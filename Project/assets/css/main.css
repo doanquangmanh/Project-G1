@@ -355,7 +355,7 @@ a {
   background-color: #f2f2f2;
   margin-top: 82px;
 }
-v.g-type-marketing-header {
+.g-type-marketing-header {
   font-size: 2rem;
   width: 325px;
   font-weight: 100;
@@ -426,7 +426,7 @@ v.g-type-marketing-header {
 /**/
 .signupModule {
   width: 100%;
-
+  line-height: 50px;
   height: 500px;
   margin-top: 300px;
   color: var(--text-color);

@@ -35,7 +35,9 @@ starts()
 
 //XỬ LÍ KHI CLICK
 function handleEvents() {
+    
     const songImages = $$('.pageList-item__head')
+    console.log(songImages)
     const songAction = $$('.pageList-item__action')
 
     //xử lí khi hover qua bài hát
@@ -47,6 +49,8 @@ function handleEvents() {
             songAction[i].style.display = "none"
         }
     })
+    
+    
 }
 
 
@@ -114,12 +118,13 @@ function createSongs(musics) {
         },
 
         handleEvents: function () {
-
+            // const songImages =
             const _this = this
             //Xử lí khi click play
            
             playBtn.onclick = function () {
                 if (_this.isPlaying) {
+
                     audio.pause()
                 } else {
                     audio.play()
@@ -137,8 +142,6 @@ function createSongs(musics) {
                 player.classList.remove('playing')
               
             }
-
-
             //Khi tiến độ bài hát thay đổi          
             audio.ontimeupdate = function () {
                 if (audio.duration) {
@@ -233,12 +236,24 @@ function createSongs(musics) {
                 }
                 else if (e.target.closest('.active') && _this.isPlaying === false) {
                     audio.play()
-                    songImage.classList.add('action')
+                    // songImage.classList.add('action')
                 }               
                 if (pauseImg) {
                     audio.pause()
-                    songImage.classList.remove('action')
+                    // songImage.classList.remove('action')
                 }
+                // //Khi chạy bài hát
+                // audio.onplay = function () {
+                //     _this.isPlaying = true
+                //     player.classList.add('playing')
+                //     songImage.classList.add('action')
+                // }
+                // //Khi dừng bài hát
+                // audio.onpause = function () {
+                //     _this.isPlaying = false
+                //     player.classList.remove('playing')
+                //     songImage.classList.remove('action')
+                // }
             }
             //Xu li voi volume
             //Khi hover volume 
