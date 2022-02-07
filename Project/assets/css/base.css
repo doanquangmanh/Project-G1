@@ -472,7 +472,7 @@ body {
   margin-left: 140px;
   display: flex;
   position: relative;
-  width: 1240px;
+  margin-right: 140px;
   flex-direction: row;
   flex-wrap: nowrap;
 }
