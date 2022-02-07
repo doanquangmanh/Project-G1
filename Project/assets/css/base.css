@@ -25,8 +25,8 @@ body {
 .app {
   background-color: var(--white-color);
   position: relative;
-  margin-left: 140px;
-  margin-right: 140px;
+  margin: auto;
+  width: 1240px;
 }
 .grid {
   width: 1200px;

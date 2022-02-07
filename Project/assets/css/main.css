@@ -172,6 +172,9 @@ a {
   margin-top: 30px;
 }
 /*SearchBar*/
+.search {
+  margin: auto;
+}
 .search__title {
   margin-top: 32px;
   margin-left: 300px;
@@ -181,9 +184,9 @@ a {
 .search-bar {
   height: 47px;
   width: 602px;
-  margin-top: 48px;
+  margin-top: 48px !important;
   display: flex;
-  margin-left: 321px;
+  margin: auto;
   border-radius: 2px;
   background-color: rgb(242 242 242);
 }
