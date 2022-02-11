@@ -564,7 +564,7 @@ body {
   border: #5a5a5a solid 1px;
 }
 .Sign-in:hover {
-  border: #f2f2f2;
+  border: 1px solid rgba(255, 255, 255, 0.7);
 }
 .login {
   width: 120px;
@@ -585,10 +585,21 @@ body {
   font-size: 1.5rem;
   margin-top: 15px;
 }
+
+.load:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .load__icon {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-left: 20px;
 }
+
+.load__icon:hover {
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
 .header-about {
   float: left;
 }
