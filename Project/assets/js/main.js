@@ -27,7 +27,8 @@ const volumeUp = $('.volume-up')
 const volumeMute = $('.volume-mute')
 const volumeIcon = $('.volume--icon')
 const playbackSoundBadge = $('.playbackSoundBadge')
-
+const ranger = $('.ranger-progress')
+const volumeProgress = $('.volume-progress')
 function starts() {
     getSongs(createSongs)
 }
@@ -149,10 +150,9 @@ function createSongs(musics) {
             //Khi tiến độ bài hát thay đổi          
             audio.ontimeupdate = function () {
                 if (audio.duration) {
-                    isMouseDown = false
                     const progressPercent = Math.floor(audio.currentTime / audio.duration * 100)
                     progress.value = progressPercent
-
+                    ranger.style.width =   progressPercent+ "%";
                     //Hiển thị thời gian chạy được
                     var minues = Math.floor(audio.currentTime / 60)
                     var sec = Math.floor(audio.currentTime);
@@ -173,7 +173,8 @@ function createSongs(musics) {
             }
 
             //Xử lí tua bài hát
-            progress.onchange = function (e) {
+            progress.oninput = function(e){
+                ranger.style.width = this.value + "%";
                 const seekTime = audio.duration / 100 * e.target.value
                 audio.currentTime = seekTime
             }
@@ -222,7 +223,7 @@ function createSongs(musics) {
             playList.onclick = function (e) {
                 const pauseImg = e.target.closest('.pageList-item__pause')
                 const songNode = e.target.closest('.pageList-item:not(.active)')
-               
+                player.style.display = "block"
                 if (songNode || e.target.closest('.pageList-item__option')) {
                     //Xu li click vao song
                     if (songNode && !e.target.closest('.pageList-item__option')) {
@@ -263,10 +264,12 @@ function createSongs(musics) {
             }
             //Khi chinh volume
             var currentVolume = audio.volume
-            volumeRange.onchange = function (e) {
-                const volumeValue = 1/ 10 * e.target.value 
+            volumeRange.oninput = function (e) {
+                const volumeValue = 1/ 10 * e.target.value
                 audio.volume = volumeValue
                 currentVolume = volumeValue
+                console.log(volumeValue*100)
+                volumeProgress.style.width = volumeValue * 100 +"%"
                 if(audio.volume > 0.5){
                     volume.classList.add('volumeUp')
                     volume.classList.remove('volumeDown')
@@ -290,7 +293,6 @@ function createSongs(musics) {
                 }else if(audio.volume === 0){
                     audio.volume = currentVolume
                     volumeRange.value = currentVolume *10
-                    console.log(currentVolume)
                 }
                 if(audio.volume > 0.5){
                     volume.classList.add('volumeUp')
@@ -315,6 +317,14 @@ function createSongs(musics) {
             singerName.textContent = this.currentSong.singer
             coverImage.src = this.currentSong.image
             audio.src = this.currentSong.path
+            const song = {
+                songName : this.currentSong.name,
+                singer : this.currentSong.singer,
+                image : this.currentSong.image,
+                audio : this.currentSong.path
+            }
+            songInfo(song)
+            
         },
         nextSong: function () {
             this.currentIndex++
@@ -354,3 +364,8 @@ function createSongs(musics) {
     }
     app.start()
 }
+export function songInfo(song){
+    console.log(song)
+}
+
+

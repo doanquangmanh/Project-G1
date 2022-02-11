@@ -68,6 +68,13 @@ a {
   background-color: #ff5500;
   color: #fff;
 }
+.header__tagline {
+  line-height: 3rem;
+  padding: 3rem;
+}
+.header__title {
+  padding-bottom: 15px;
+}
 /*Authen modal */
 
 .auth-form {
@@ -416,11 +423,13 @@ a {
 .FeaturedArtists__wrapper--title {
   font-size: 4rem;
   color: var(--white-color);
+  margin-bottom: 15px;
 }
 .FeaturedArtist__wrapper--text {
   color: var(--white-color);
   font-size: 3rem;
   line-height: 1.1;
+  margin-bottom: 10px;
 }
 .btn-findOut {
   border: solid var(--white-color) 1px;
