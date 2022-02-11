@@ -223,7 +223,7 @@ function createSongs(musics) {
             playList.onclick = function (e) {
                 const pauseImg = e.target.closest('.pageList-item__pause')
                 const songNode = e.target.closest('.pageList-item:not(.active)')
-               
+                player.style.display = "block"
                 if (songNode || e.target.closest('.pageList-item__option')) {
                     //Xu li click vao song
                     if (songNode && !e.target.closest('.pageList-item__option')) {

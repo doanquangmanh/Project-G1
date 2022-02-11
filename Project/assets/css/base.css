@@ -606,6 +606,7 @@ body {
   display: flex;
   bottom: 0;
   border-top: #d6d6d6 solid 1px;
+  display: none;
 }
 #audioPlayer {
   width: 680px;
