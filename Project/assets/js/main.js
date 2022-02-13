@@ -18,13 +18,13 @@ const nextBtn = $('.btn-next')
 const prevBtn = $('.btn-prev')
 const randomBtn = $('.btn-random')
 const repeatBtn = $('.btn-repeat')
-const pauseImgBtn = $('.pageList-item__pause--icon')
+// const pauseImgBtn = $('.pageList-item__pause--icon')
 const volume = $('.volume')
 const volumeTarget = $('.volume--background')
 const volumeRange = $('.volume--range')
-const volumeDown = $('.volume-down')
-const volumeUp = $('.volume-up')
-const volumeMute = $('.volume-mute')
+// const volumeDown = $('.volume-down')
+// const volumeUp = $('.volume-up')
+// const volumeMute = $('.volume-mute')
 const volumeIcon = $('.volume--icon')
 const playbackSoundBadge = $('.playbackSoundBadge')
 const ranger = $('.ranger-progress')
@@ -248,7 +248,7 @@ function createSongs(musics) {
             }
             //Xu li voi volume
             //Khi hover volume 
-            volume.onmouseover = function(e){
+            volume.onmouseover = function(){
                 volumeTarget.style.display = "block"
             }
             playbackSoundBadge.onmouseover = function(){
