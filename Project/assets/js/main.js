@@ -18,17 +18,15 @@ const nextBtn = $('.btn-next')
 const prevBtn = $('.btn-prev')
 const randomBtn = $('.btn-random')
 const repeatBtn = $('.btn-repeat')
-// const pauseImgBtn = $('.pageList-item__pause--icon')
 const volume = $('.volume')
 const volumeTarget = $('.volume--background')
 const volumeRange = $('.volume--range')
-// const volumeDown = $('.volume-down')
-// const volumeUp = $('.volume-up')
-// const volumeMute = $('.volume-mute')
 const volumeIcon = $('.volume--icon')
 const playbackSoundBadge = $('.playbackSoundBadge')
 const ranger = $('.ranger-progress')
 const volumeProgress = $('.volume-progress')
+const artist = $('.author')
+console.log(artist)
 function starts() {
     getSongs(createSongs)
 }
@@ -289,10 +287,11 @@ function createSongs(musics) {
                 if(audio.volume !== 0){
                     audio.volume = 0
                     volumeRange.value = 0
-                    
+                    volumeProgress.style.width = 0+"%"
                 }else if(audio.volume === 0){
                     audio.volume = currentVolume
                     volumeRange.value = currentVolume *10
+                    volumeProgress.style.width = volumeRange.value *10 +"%"
                 }
                 if(audio.volume > 0.5){
                     volume.classList.add('volumeUp')
@@ -351,21 +350,18 @@ function createSongs(musics) {
         start: function () {
             //Định nghĩa các thuộc tính cho Object
             this.defineProperties()
-
-            //Lắng nghe, xử lí các sự kiện(DOM events)
-            // this.handleEvents()
-
             //Tai thong tin bai hat dau tien vao UI
             this.loadCurrentSong()
-
             //Render Songs
             this.render()
         }
     }
     app.start()
 }
-export function songInfo(song){
-    console.log(song)
+
+function songInfo(song){
+    const currentSong = song
+    console.log(currentSong)
 }
 
-
+export default songInfo

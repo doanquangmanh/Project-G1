@@ -1,4 +1,5 @@
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
+import songInfo from "./main.js"
+
+console.log(songInfo)
 
 
