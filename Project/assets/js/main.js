@@ -230,6 +230,7 @@ function createSongs(musics) {
                         _this.loadCurrentSong()
                         _this.render()
                         audio.play()
+
                     }
                     //Xu li khi click vao option
                     if (e.target.closest('.pageList-item__option')) {
@@ -242,7 +243,8 @@ function createSongs(musics) {
                 if (pauseImg) {
                     audio.pause()
                 }
-         
+                const singer = e.target.closest('.pageList-item__singer')
+          
             }
             //Xu li voi volume
             //Khi hover volume 
