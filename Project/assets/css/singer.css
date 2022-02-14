@@ -54,7 +54,7 @@ body {
 }
 
 .profile-text {
-  width: 90px;
+  min-width: 90px;
   line-height: 24px;
   color: rgba(255, 255, 255, 0.8);
   background-color: rgba(0, 0, 0, 0.8);
@@ -64,7 +64,7 @@ body {
 }
 
 .profile-pro {
-  width: 110px;
+  min-width: 110px;
   display: flex;
   justify-content: space-around;
   border-radius: 4px;
