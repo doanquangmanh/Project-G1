@@ -35,7 +35,7 @@ body {
 }
 
 .profile-tick {
-  width: 130px;
+  min-width: 130px;
   background-color: rgba(0, 0, 0, 0.9);
   color: #fff;
   text-align: center;
