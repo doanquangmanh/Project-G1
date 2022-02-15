@@ -427,11 +427,13 @@ body {
   margin-left: 15px;
   font-size: 16px;
   align-items: center;
+  cursor: pointer;
 }
 .btn-toggle-play {
   margin-left: 26px;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 .pauseBtn {
   position: relative;
@@ -440,6 +442,7 @@ body {
 }
 .playBtn {
   position: relative;
+  left: -5px;
   display: inline-block;
 }
 .playing .btn-toggle-play .playBtn {
@@ -451,12 +454,15 @@ body {
 }
 .btn-next {
   margin-left: 14px;
+  cursor: pointer;
 }
 .btn-random {
   margin-left: 26px;
+  cursor: pointer;
 }
 .btn-repeat {
   margin-left: 26px;
+  cursor: pointer;
 }
 .playbackTimeline {
   margin-left: 40px;
@@ -507,7 +513,7 @@ body {
   cursor: pointer;
 }
 .volume--icon {
-  margin-left: 630px;
+  margin-left: 610px;
   font-size: 15px;
 }
 .volumeUp .volume-up {
@@ -538,17 +544,17 @@ body {
   display: block !important;
 }
 .volume-up {
-  bottom: 15px;
+  bottom: 16px;
   position: fixed;
 }
 .volume-down {
   position: fixed;
-  bottom: 15px;
+  bottom: 16px;
   display: none !important;
 }
 .volume-mute {
   position: fixed;
-  bottom: 15px;
+  bottom: 16px;
   display: none !important;
 }
 .playbackSoundBadge {

@@ -281,9 +281,9 @@ a {
 }
 .pageList-item__play {
   position: absolute;
-  font-size: 100px;
+  font-size: 99px;
   top: 20%;
-  left: 20%;
+  left: 19.5%;
   display: flex;
 }
 .pageList-item__play:hover {
@@ -292,24 +292,25 @@ a {
 .pageList-item__play--icon {
   color: var(--primary-color);
   background-color: var(--white-color);
-  border-radius: 50px;
+  border-radius: 50%;
 }
 
 .pageList-item__pause--icon {
   color: var(--primary-color);
   position: absolute;
-  left: -90px;
+  left: -88.5px;
   background-color: var(--white-color);
-  border-radius: 50px;
+  border-radius: 50%;
 }
+
 .action .pageList-item__pause {
   display: block;
 }
 .pageList-item__pause {
-  font-size: 100px;
+  font-size: 99px;
   position: absolute;
-  margin-left: 135px;
-  margin-top: 45px;
+  top: 20%;
+  left: 58%;
   display: none;
 }
 .pageList-item__body {

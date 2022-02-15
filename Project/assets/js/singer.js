@@ -27,27 +27,30 @@ function getSongs(callback){
 function renderSinger(singers){
     var singerInfo = $('.singer-info')
     var htmls = singers.map(function(singer){
-        return `
-        <div class="container profile-background" style="background-image: url(${singer.backgroundImg}); background-size:cover; background-repeat: no-repeat">
-        <div class="profile">
-            <div class="profile-img">
-                <img src= "${singer.singerImg}" alt="${singer.singerName}">
-            </div>
-            <div class="profile-info">
-                <h2 class="profile-tick">
-                    ${singer.singerName}
-                    <i class="fa-solid fa-circle-check"></i>
-                </h2>
-                <p class="profile-text">${singer.singerName}</p>
-                <p class="profile-text">${singer.country}</p>
-                <p class="profile-pro">
-                    <i class="fa-solid fa-star color-icon-profile"></i>
-                    <span class="pro-text">PRO UNLIMITED</span>
-                </p>
+        if(singer.singerName === "WOWY"){
+            return `
+            <div class="container profile-background" style="background-image: url(${singer.backgroundImg}); background-size:cover; background-repeat: no-repeat">
+            <div class="profile">
+                <div class="profile-img">
+                    <img src= "${singer.singerImg}" alt="${singer.singerName}">
+                </div>
+                <div class="profile-info">
+                    <h2 class="profile-tick">
+                        ${singer.singerName}
+                        <i class="fa-solid fa-circle-check"></i>
+                    </h2>
+                    <p class="profile-text">${singer.singerName}</p>
+                    <p class="profile-text">${singer.country}</p>
+                    <p class="profile-pro">
+                        <i class="fa-solid fa-star color-icon-profile"></i>
+                        <span class="pro-text">PRO UNLIMITED</span>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-        `
+            `
+        }
+      
     })
     singerInfo.innerHTML = htmls.join(' ');
 }
@@ -138,3 +141,7 @@ function renderSongs(songs){
     })
     musics.innerHTML = htmls.join(' ')
 }
+
+import nameS from "./main.js"
+
+console.log(nameS)
