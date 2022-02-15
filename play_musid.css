@@ -12,43 +12,57 @@
 .image__song{
     padding :15px 100px;
 }
+/* play-icon */
 .nav__player {
-    margin-top: 2cm;
-    margin-left: 1cm;
+    margin-top: 18rem;
+    
 }
 .body__nav{
-    justify-content:center;
+    justify-content: center;
 }
-.nav__play{
+.nav__play {
     padding :30px 30px;
     color : white;
     background-color :#f50;
-    border-radius: 50%;
-    margin-top: -50px;
-    margin-right:15px ;
-    
+    border-radius: 100%;
+    text-decoration: none;
+    margin-left: -2cm;
 }
-.nav__singer_song{
+
+.nav__play:hover {
+    background:rgb(224, 111, 67);
+}
+
+.nav__play-icon {
+    font-size:30px;
+}
+/* name song  */
+.nav__song{
+    margin-left: 3rem;
+    margin-top: -2.1rem;
     font-family: roboto,sans-serif;
     padding:50px 0px 0px 05px;
     align-items: flex-start;
-    
+    text-align: center;
 }
-.nav__singer_song.nav__singer_song .nav__singer_song-singer {
-    text-decoration : none;
+.nav__song-text {
     color:azure;
-    padding:10px 5xp; 
-    background-color :black;
-    margin-top:15px;
-    font-size:15px;
+    padding: 2px 7px;
+    border-radius :2px;
+    margin-bottom: 10px;
+    border:3px solid;
+    text-align: center;
 }
-.nav__singer_song.nav__singer_song .nav__singer_song-text{
+.nav__song-singer {
     color:azure;
-    background-color :black;
-    font-size: 29.5px;
+    padding: 2px 7px ;
+    font-size:20px;
+    border-radius :2px;
+    border:3px solid;
+    text-align:center ;
 }
 
-/*      container  ----- */
+/*  container  ----- */
 .container{
     display: flex;
     width: 100%;
