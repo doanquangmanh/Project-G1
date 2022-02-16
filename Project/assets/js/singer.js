@@ -1,7 +1,7 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const songsApi = "https://music-world-g1.herokuapp.com/songs"
-const singerApi ="https://music-world-g1.herokuapp.com/singer"
+const singerApi ="https://music-world-g1.herokuapp.com/singers"
 
 function start(){
     getInfoSinger(renderSinger)
@@ -23,11 +23,23 @@ function getSongs(callback){
     })
     .then(callback)
 }
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+const url = location.href
+var idUrl = getParameterByName('id', url);
 
+console.log(idUrl)
 function renderSinger(singers){
     var singerInfo = $('.singer-info')
     var htmls = singers.map(function(singer){
-        if(singer.singerName === "WOWY"){
+        if(Number(singer.id) === Number( idUrl)){
             return `
             <div class="container profile-background" style="background-image: url(${singer.backgroundImg}); background-size:cover; background-repeat: no-repeat">
             <div class="profile">
@@ -55,10 +67,11 @@ function renderSinger(singers){
     singerInfo.innerHTML = htmls.join(' ');
 }
 
+
 function renderSongs(songs){
     var musics = $('.song-container')
     var htmls = songs.map((song,index)=>{
-        if(song.singer === "WOWY"){
+         if(Number (song.singerId) === Number( idUrl)){
             return`
             <div class="list mt-40">
             <div class="list-info">
@@ -140,8 +153,7 @@ function renderSongs(songs){
         }
     })
     musics.innerHTML = htmls.join(' ')
+
 }
 
-import nameS from "./main.js"
 
-console.log(nameS)

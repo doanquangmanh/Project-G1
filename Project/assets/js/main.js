@@ -25,8 +25,8 @@ const volumeIcon = $('.volume--icon')
 const playbackSoundBadge = $('.playbackSoundBadge')
 const ranger = $('.ranger-progress')
 const volumeProgress = $('.volume-progress')
-const artist = $('.author')
-console.log(artist)
+const artist = $('.singer')
+
 function starts() {
     getSongs(createSongs)
 }
@@ -52,10 +52,40 @@ function handleEvents() {
     
 }
 
+function singerNames(){
+    const singerAPI ="https://music-world-g1.herokuapp.com/singers" 
+    getSinger(renderSinger)
+    const sNames = $$('.pageList-item__singer')
+    console.log(sNames[4].id)
+    
+    function getSinger(callback) {
+        fetch(singerAPI)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(callback)
+    }
+    
+   function renderSinger(singers){
+//             singers.map((singer, index) => {
+            
+       
+//    })
+    sNames.forEach(function (singerName, i) {
+        if(singerName.dataset.index === singer[i].id){
+            singerName.textContent = singers[i].singerName
+        }
+})
+
+   
+}
+}
+
 //MUSIC
 function getSongs(callback) {
     fetch(songsApi)
         .then(function (response) {
+           
             return response.json();
         })
         .then(callback)
@@ -73,7 +103,7 @@ function createSongs(musics) {
         isRandom: false,
         songs,
         render: function () {
-            const htmls = this.songs.map((song, index) => {
+            const htmls = this.songs.map((song, index) => { 
                 return `
                 <div class="pageList-item ${index === this.currentIndex && this.isPlaying === true ? 'action active' : ' ' }" data-index="${index}">
                     <div class="pageList-item__head }">
@@ -94,15 +124,15 @@ function createSongs(musics) {
                     </div>
                     <div class="pageList-item__body">
                         <a class="pageList-item__name" href="">${song.name}</a><br>
-                        <a class="pageList-item__singer" href="">${song.singer}</a>
+                        <a class="pageList-item__singer" href="singer.html?id=${song.singerId}" data-index="${song.singerId}">${song.singer}</a>
                     </div>
                 </div>
-            `
-
+            ` 
             })
             playList.innerHTML = htmls.join(' ')
             handleEvents()
             this.handleEvents()
+            singerNames()
         },
         defineProperties: function () {
             Object.defineProperty(this, 'currentSong', {
@@ -111,12 +141,12 @@ function createSongs(musics) {
                 }
             })
         },
-        
+     
         handleEvents: function () {
+            
             const songImages = $$('.pageList-item')
             const _this = this
             //Xử lí khi click play
-           
             playBtn.onclick = function () {
                 if (_this.isPlaying) {
                     audio.pause()
@@ -318,14 +348,8 @@ function createSongs(musics) {
             singerName.textContent = this.currentSong.singer
             coverImage.src = this.currentSong.image
             audio.src = this.currentSong.path
-            const song = {
-                songName : this.currentSong.name,
-                singer : this.currentSong.singer,
-                image : this.currentSong.image,
-                audio : this.currentSong.path
-            }
-            songInfo(song)
-            
+            artist.href = "./singer.html/singer.id"
+
         },
         nextSong: function () {
             this.currentIndex++
