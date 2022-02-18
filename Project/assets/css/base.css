@@ -413,6 +413,7 @@ body {
   display: flex;
   bottom: 0;
   border-top: #d6d6d6 solid 1px;
+  display: none;
 }
 .playControls__item {
   width: 1240px;
@@ -608,6 +609,9 @@ body {
   font-size: 1.4rem;
   margin-top: 10px;
 }
+.menuBtn {
+  cursor: pointer;
+}
 .timePlay {
   display: inline;
   width: 50px;
@@ -616,17 +620,7 @@ body {
 .active {
   color: #f50;
 }
-.playControls {
-  width: 100%;
-  height: 50px;
-  background-color: #f2f2f2;
-  position: fixed;
-  margin-left: 0px;
-  display: flex;
-  bottom: 0;
-  border-top: #d6d6d6 solid 1px;
-  display: none;
-}
+
 #audioPlayer {
   width: 680px;
   float: left;
@@ -712,7 +706,8 @@ body {
   border-radius: 50px;
   cursor: pointer;
 }
-.menu {
+
+.menuSong {
   width: 482px;
   background-color: #ffffff;
   height: 500px;
@@ -722,7 +717,9 @@ body {
   border: 1px solid #e5e5e5;
   border-radius: 2px;
   display: none;
+  overflow: auto;
 }
+
 .menu-header {
   background-color: #fff;
   height: 65px;
@@ -732,6 +729,7 @@ body {
 }
 .menu-header__text {
   font-size: 1.8rem;
+  pointer-events: none;
 }
 .menu-header__out {
   width: 20px;
@@ -740,6 +738,9 @@ body {
   position: relative;
   top: -15px;
   font-size: 20px;
+}
+.menu-out-icon {
+  cursor: pointer;
 }
 .menu-playlist {
   display: flex;

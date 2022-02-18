@@ -77,14 +77,15 @@
                         <h1 class="boder-butom">
                             Discover Tracks and Playlists
                         </h1>
+                    </div>
+                    <div id="wapper">
                         <div class="chart">
                             <h2 class="text-chart chart1">Charts: Top 50</h2>
                             <p class="p-text">The most played tracks on SoundCloud this week</p>
                         </div>
-                    </div>
-                    <!-- chart list -->
-                    <div id="wapper">
-                        <div class="row filtering">
+                        <div class="row filtering ">
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="top50">
+                            </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="row">
                                     <div class="wap-items-ss brbox">
@@ -92,8 +93,8 @@
                                             <div class="hover-img">
                                                 <img src="https://i1.sndcdn.com/artworks-z2gxcCZamslfRFWy-mSu93g-t200x200.jpg"
                                                     alt="image">
+                                                    <!--ACTION-->
                                                 <div class="overlay">
-                                                              <!--ACTION-->
                                                     <div class="pageList-item__action">
                                                         <div class="pageList-item__option">
                                                             <i class="fas fa-heart pageList-item__like"></i>
@@ -450,7 +451,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                           
                         </div>
                         <!-- chart 2 -->
                         <div class="chart">
@@ -1898,9 +1899,8 @@
                     4:18
                 </div>
             </div>
-            
-            <div class="volume">
-                <div class="volume--icon">
+            <div class="volume ">
+                <div class="volume--icon ">
                     <i class="fas fa-volume-up volume-up"></i>
                      <i class="fas fa-volume-down  volume-down"></i>
                     <i class="fas fa-volume-mute  volume-mute"></i> 
@@ -1912,30 +1912,98 @@
                     </div>
                 </div>        
             </div>
+            
             <div class="playbackSoundBadge">
-                <a href="" class="">
+                <a href="#" class="">
                     <div class="image__lightOutline ">
                         <img src="https://i1.sndcdn.com/artworks-z2gxcCZamslfRFWy-mSu93g-t120x120.jpg" class="image__lightOutline--child">
                     </div>
                 </a>
                 <div class="playbackSoundBadge__titleContextContainer">
-                    <a href="" class="playbackSoundBadge__lightLink">Denvau
-                    </a>
+                    <a href="./singer.html" id="linkSinger" class="playbackSoundBadge__lightLink singer">Denvau</a>
+
                     <div class="playbackSoundBadge__title">
                         <a class="playbackSoundBadge__titleLink" href="">
-                            <span class="playbackSoundBadge__titleText">Đen - Mang Tiền Về Cho Mẹ ft. Nguyên Thảo</span>
+                            <span class="playbackSoundBadge__titleText song">Đen - Mang Tiền Về Cho Mẹ ft. Nguyên Thảo</span>
                         </a>
                     </div>
                 </div>
                 <div class="btn-like">
                     <i class="fas fa-heart"></i>
                 </div >
-                <div class="btn-follow">
-                    <i class="fas fa-bars"></i>
+                <div class="menu">
+                    <div class="btn-menu ">
+                    <i class="fas fa-bars menuBtn"></i>
+                    </div>
+                    <div class="menuSong">
+                        <div class="menu-header">
+                            <span class="menu-header__text"><p>Next up</p></span>
+                            <div class="menu-header__out">
+                                <i class="fas fa-times menu-out-icon"></i>
+                            </div>
+                        </div>
+                        <div class="menu-main">
+                            <div class="menu-playlist">
+                                <div class="playlist-song">
+                                    <div class="playlist-song__img">
+                                        <img src="https://i1.sndcdn.com/artworks-z2gxcCZamslfRFWy-mSu93g-t120x120.jpg" class="menu-song_img">
+                                    </div>
+                                    <div class="playlist-song__body">
+                                        <h3 class="title">Đen - Mang Tiền Về Cho Mẹ ft. Nguyên Thảo</h3>
+                                        <p class="author">Denvau</p>
+                                    </div>
+                                    <div class="song-option">
+                                        <i class="fas fa-heart song-option__like"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </div>
+                                </div>
+                                <div class="playlist-song">
+                                    <div class="playlist-song__img">
+                                        <img src="https://i1.sndcdn.com/artworks-z2gxcCZamslfRFWy-mSu93g-t120x120.jpg" class="menu-song_img">
+                                    </div>
+                                    <div class="playlist-song__body">
+                                        <h3 class="title">Đen - Mang Tiền Về Cho Mẹ ft. Nguyên Thảo</h3>
+                                        <p class="author">Denvau</p>
+                                    </div>
+                                    <div class="song-option">
+                                        <i class="fas fa-heart song-option__like"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </div>
+                                </div>
+                                <div class="playlist-song">
+                                    <div class="playlist-song__img">
+                                        <img src="https://i1.sndcdn.com/artworks-z2gxcCZamslfRFWy-mSu93g-t120x120.jpg" class="menu-song_img">
+                                    </div>
+                                    <div class="playlist-song__body">
+                                        <h3 class="title">Đen - Mang Tiền Về Cho Mẹ ft. Nguyên Thảo</h3>
+                                        <p class="author">Denvau</p>
+                                    </div>
+                                    <div class="song-option">
+                                        <i class="fas fa-heart song-option__like"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </div>
+                                </div>
+                                <div class="playlist-song">
+                                    <div class="playlist-song__img">
+                                        <img src="https://i1.sndcdn.com/artworks-z2gxcCZamslfRFWy-mSu93g-t120x120.jpg" class="menu-song_img">
+                                    </div>
+                                    <div class="playlist-song__body">
+                                        <h3 class="title">Đen - Mang Tiền Về Cho Mẹ ft. Nguyên Thảo</h3>
+                                        <p class="author">Denvau</p>
+                                    </div>
+                                    <div class="song-option">
+                                        <i class="fas fa-heart song-option__like"></i>
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <audio id="audio" src=""></audio>
+       
     </div>
     <!--FORM ĐĂNG NHẬP(ĐĂNG KÝ)-->
     <div class="btn-account">

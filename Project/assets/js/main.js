@@ -1,7 +1,7 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const songsApi = "https://music-world-g1.herokuapp.com/songs"
-
+const singerAPI ="https://music-world-g1.herokuapp.com/singers" 
 
 //
 const playList = $('.trendingTrack__row')
@@ -53,10 +53,9 @@ function handleEvents() {
 }
 
 function singerNames(){
-    const singerAPI ="https://music-world-g1.herokuapp.com/singers" 
+    
     getSinger(renderSinger)
     const sNames = $$('.pageList-item__singer')
-    console.log(sNames[4].id)
     
     function getSinger(callback) {
         fetch(singerAPI)
@@ -72,7 +71,7 @@ function singerNames(){
        
 //    })
     sNames.forEach(function (singerName, i) {
-        if(singerName.dataset.index === singer[i].id){
+        if(singerName.dataset.index === singers[i].id){
             singerName.textContent = singers[i].singerName
         }
 })
@@ -96,7 +95,7 @@ function createSongs(musics) {
     for (var i = 0; i < 15; i++) {
         songs.push(musics[i])
     }
-
+    
     const app = {
         currentIndex: 0,
         isPlaying: false,
@@ -374,6 +373,7 @@ function createSongs(musics) {
             this.loadCurrentSong()
         },
         start: function () {
+            console.log(this.songs)
             //Định nghĩa các thuộc tính cho Object
             this.defineProperties()
             //Tai thong tin bai hat dau tien vao UI
@@ -385,9 +385,5 @@ function createSongs(musics) {
     app.start()
 }
 
-function songInfo(song){
-    const currentSong = song
-    console.log(currentSong)
-}
 
-export default songInfo
+
