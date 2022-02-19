@@ -717,9 +717,11 @@ body {
   border: 1px solid #e5e5e5;
   border-radius: 2px;
   display: none;
+}
+.menu-main {
+  height: 435px;
   overflow: auto;
 }
-
 .menu-header {
   background-color: #fff;
   height: 65px;

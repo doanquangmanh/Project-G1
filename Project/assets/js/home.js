@@ -397,6 +397,7 @@ function renderSongs(musics,playlistId){
                     artist.href = "./singer.html?id="+song.singerId
                 }
             })
+            audio.play()
         },
         start: function () {       
             //Định nghĩa các thuộc tính cho Object

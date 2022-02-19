@@ -55,8 +55,8 @@ function handleEvents() {
 function singerNames(){
     
     getSinger(renderSinger)
-    const sNames = $$('.pageList-item__singer')
-    
+    const singerNames = $$('.pageList-item__singer')
+  
     function getSinger(callback) {
         fetch(singerAPI)
             .then(function (response) {
@@ -66,16 +66,16 @@ function singerNames(){
     }
     
    function renderSinger(singers){
-//             singers.map((singer, index) => {
-            
-       
-//    })
-    sNames.forEach(function (singerName, i) {
-        if(singerName.dataset.index === singers[i].id){
-            singerName.textContent = singers[i].singerName
-        }
-})
+    singerNames.forEach(function(sName,index){
 
+            singers.map((singer)=>{
+                if(Number(sName.id)===Number(singer.id)){
+                    sName.textContent = singer.singerName
+                }
+           
+        })
+       })
+   
    
 }
 }
@@ -124,7 +124,7 @@ function createSongs(musics) {
                     </div>
                     <div class="pageList-item__body">
                         <a class="pageList-item__name" href="">${song.name}</a><br>
-                        <a class="pageList-item__singer" href="singer.html?id=${song.singerId}">${song.singer}</a>
+                        <a class="pageList-item__singer" href="singer.html?id=${song.singerId}" id="${song.singerId}">unkown</a>
                     </div>
                 </div>
             ` 
