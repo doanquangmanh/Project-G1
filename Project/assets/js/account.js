@@ -9,6 +9,8 @@ const loginForm = document.querySelector('#login-form')
 const notify = document.querySelector('.notify')
 const btnHomePage = document.querySelector('.btnHomePage')
 
+const modalOverlay = document.querySelector('.modal__overlay');
+
 
 //2 nút 2 form đăng ký, đăng nhập
 const registerBtn = document.querySelector('#register-btn')
@@ -45,11 +47,16 @@ function HandleEvents(){
     returnBtn[1].onclick = function(){
         modal.style.display = "none"
         sigUpForm.style.display = "block"
-        
     }
     //
     btnHomePage.onclick = function(){
         notify.style.display = "none"
+    }
+    // 
+    modalOverlay.onclick = function(){
+        modal.style.display = "none"
+        sigUpForm.style.display = "block"
+        loginForm.style.display = "block"
     }
 }
 
