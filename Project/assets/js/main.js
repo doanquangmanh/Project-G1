@@ -103,6 +103,7 @@ function createSongs(musics) {
         songs,
         render: function () {
             const htmls = this.songs.map((song, index) => { 
+                
                 return `
                 <div class="pageList-item ${index === this.currentIndex && this.isPlaying === true ? 'action active' : ' ' }" data-index="${index}">
                     <div class="pageList-item__head }">
@@ -123,7 +124,7 @@ function createSongs(musics) {
                     </div>
                     <div class="pageList-item__body">
                         <a class="pageList-item__name" href="">${song.name}</a><br>
-                        <a class="pageList-item__singer" href="singer.html?id=${song.singerId}" data-index="${song.singerId}">${song.singer}</a>
+                        <a class="pageList-item__singer" href="singer.html?id=${song.singerId}">${song.singer}</a>
                     </div>
                 </div>
             ` 
@@ -347,7 +348,12 @@ function createSongs(musics) {
             singerName.textContent = this.currentSong.singer
             coverImage.src = this.currentSong.image
             audio.src = this.currentSong.path
-            artist.href = "./singer.html/singer.id"
+            // artist.href = "./singer.html?id="+singerId
+            this.songs.map((song, index) => {
+                if(song.singer===singerName.textContent){
+                    artist.href = "./singer.html?id="+song.singerId
+                }
+            })
 
         },
         nextSong: function () {
@@ -373,11 +379,10 @@ function createSongs(musics) {
             this.loadCurrentSong()
         },
         start: function () {
-            console.log(this.songs)
             //Định nghĩa các thuộc tính cho Object
             this.defineProperties()
-            //Tai thong tin bai hat dau tien vao UI
-            this.loadCurrentSong()
+              //Tai thong tin bai hat dau tien vao UI
+              this.loadCurrentSong()
             //Render Songs
             this.render()
         }

@@ -48,7 +48,6 @@ function renderPlaylist(playlists){
     var htmls = playlists.map(function(playlist,index){
         handleEvent(playlist.id)
         return`
-        
             <div class="row" data-index="${playlist.id}">
                 <div class="wap-items-ss brbox">
                     <div class="wap-ss-img">
@@ -71,7 +70,6 @@ function renderPlaylist(playlists){
                             </div>
                         </div>
                     </div>
-                </div>
                 <div class="textleft">
                     <div style="margin-top:10px;">${playlist.playlistName}
                     </div>
@@ -80,7 +78,7 @@ function renderPlaylist(playlists){
                     </div>
                 </div>
             </div>
-     
+        </div>
         
     `
         
@@ -394,7 +392,11 @@ function renderSongs(musics,playlistId){
             singerName.textContent = this.currentSong.singer
             coverImage.src = this.currentSong.image
             audio.src = this.currentSong.path
-            audio.play()
+            this.songs.map((song, index) => {
+                if(song.singer===singerName.textContent){
+                    artist.href = "./singer.html?id="+song.singerId
+                }
+            })
         },
         start: function () {       
             //Định nghĩa các thuộc tính cho Object
