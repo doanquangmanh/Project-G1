@@ -45,10 +45,10 @@ function getPlaylist(callback){
 
 function renderPlaylist(playlists){
     var newPlaylist = $('#top50')
-    var htmls = playlists.map(function(playlist,index){
-        handleEvent(playlist.id)
+    var htmls = playlists.map(function(playlist){
+        
         return`
-            <div class="row" data-index="${playlist.id}">
+            <div class="row rows" data-index="${playlist.id}">
                 <div class="wap-items-ss brbox">
                     <div class="wap-ss-img">
                         <div class="hover-img" >
@@ -84,20 +84,20 @@ function renderPlaylist(playlists){
         
 })
     newPlaylist.innerHTML = htmls.join(' ');
-    
+    handleEvent()
 }
 
-function handleEvent(playlistId){
-    console.log(playlistId)
-    const playlist = $('.row')
+function handleEvent(){
+    const playlist = $('.rows')
     //Click vao playlist
     playlist.onclick=function(e){
         getSongs(function(songs){
-            renderSongs(songs,playlistId)
+            renderSongs(songs)
         })
         const pauseIcon = e.target.closest('.pageList-item__pause')
-        const playIcon = e.target.closest('.pageList-item__play')
-        if(playIcon){
+
+        const playIcon = e.target.closest('.pageList-item__play--icon')
+        if(playIcon && !e.target.closest('.pageList-item__option')){
             player.style.display = "block"
         }
     }
@@ -134,7 +134,7 @@ function renderSongs(musics,playlistId){
         render: function () {
             var playlist = $('.menu-playlist')
             const htmls = this.songs.map((song,) => {  
-                if(Number(song.playlistId)===Number(playlistId)){ 
+                // if(Number(song.playlistId)===Number(playlistId)){ 
                 return `
                 <div class="menu-playlist">
                     <div class="playlist-song">
@@ -152,13 +152,14 @@ function renderSongs(musics,playlistId){
                     </div>
                 </div>    
             ` 
-                  }
+                //   }
             })
             playlist.innerHTML = htmls.join(' ');
             this.handleEvents()
         },
         handleEvents: function(){
-           
+            const playlist = $('.row')
+            console.log(playlist)
 
             const _this = this
             //Xử lí khi click play
@@ -397,7 +398,9 @@ function renderSongs(musics,playlistId){
                     artist.href = "./singer.html?id="+song.singerId
                 }
             })
-            audio.play()
+            if( player.style.display === "block"){
+                audio.play()
+            }
         },
         start: function () {       
             //Định nghĩa các thuộc tính cho Object

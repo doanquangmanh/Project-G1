@@ -149,7 +149,7 @@ img {
   font-size: 15px;
   color: var(--white-color);
   display: inline;
-  bottom: 0%;
+  bottom: 2%;
   right: 10%;
 }
 .pageList-item__like {
@@ -187,4 +187,7 @@ img {
   margin-left: 35px;
   margin-top: 35px;
   display: none;
+}
+.action .pageList-item__pause {
+  display: block;
 }

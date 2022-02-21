@@ -124,7 +124,7 @@ function createSongs(musics) {
                     </div>
                     <div class="pageList-item__body">
                         <a class="pageList-item__name" href="">${song.name}</a><br>
-                        <a class="pageList-item__singer" href="singer.html?id=${song.singerId}" id="${song.singerId}">unkown</a>
+                        <a class="pageList-item__singer" href="singer.html?id=${song.singerId}" id="${song.singerId}"></a>
                     </div>
                 </div>
             ` 
@@ -272,9 +272,7 @@ function createSongs(musics) {
                 }               
                 if (pauseImg) {
                     audio.pause()
-                }
-                const singer = e.target.closest('.pageList-item__singer')
-          
+                }    
             }
             //Xu li voi volume
             //Khi hover volume 
@@ -338,9 +336,7 @@ function createSongs(musics) {
                     volume.classList.remove('volumeDown')
                     volume.classList.add('volumeMute')
                 }
-            }
-         
-            
+            }  
         },
         
         loadCurrentSong: function () {
@@ -349,7 +345,7 @@ function createSongs(musics) {
             coverImage.src = this.currentSong.image
             audio.src = this.currentSong.path
             // artist.href = "./singer.html?id="+singerId
-            this.songs.map((song, index) => {
+            this.songs.map((song) => {
                 if(song.singer===singerName.textContent){
                     artist.href = "./singer.html?id="+song.singerId
                 }
